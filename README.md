@@ -59,3 +59,28 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Project Installation
+git clone [url]
+composer install
+Fill out Nova username & password if requested
+cp .env.example .env
+php artisan key:gen
+Fill out:
+APP_URL
+DB_ settings
+DB_DATABASE will be used as a landlord database
+SUPERUSER_
+settings will be used when creating super user with SuperUserSeeder
+Migrate landlord database (command under Database migrations section below)
+Run database seeders
+php artisan db:seed --class=LandlordSeeder --database=landlord
+npm install
+npm run dev
+or npm run prod
+Database migrations
+To migrate landlord database:
+php artisan migrate --path=database/migrations/landlord --database=landlord
+To migrate tenant databases:
+php artisan tenants:artisan "migrate --database=tenant"
+
